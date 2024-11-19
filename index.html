@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Currículo</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Currículo</h1>
+        
+        <form id="formCurriculo">
+            <!-- Etapa 1 - Informações Pessoais -->
+            <div class="etapa" id="etapa-1">
+                <h2>Informações Pessoais</h2>
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required>
+                
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+                
+                
+                <button type="button" class="next" onclick="avancarEtapa(2)">Próximo</button>
+            </div>
+            
+            <!-- Etapa 2 - Endereço -->
+            <div class="etapa" id="etapa-2">
+                <h2>Endereço</h2>
+                <label for="rua">Rua:</label>
+                <input type="text" id="rua" name="rua" required>
+
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" name="bairro" required>
+
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" required>
+
+                <label for="estado">Estado:</label>
+                <input type="text" id="estado" name="estado" required>
+
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep" required>
+                
+                <button type="button" class="previous" onclick="voltarEtapa(1)">Voltar</button>
+                <button type="button" class="next" onclick="avancarEtapa(3)">Próximo</button>
+            </div>
+            
+            <!-- Etapa 3 - Cursos -->
+            <div class="etapa" id="etapa-3">
+                <h2>Cursos</h2>
+                <label for="curso">Nome do Curso:</label>
+                <input type="text" id="curso" name="curso">
+
+                <label for="instituicao">Instituição:</label>
+                <input type="text" id="instituicao" name="instituicao">
+                
+                <label for="data_conclusao">Data de Conclusão:</label>
+                <input type="date" id="data_conclusao" name="data_conclusao">
+                
+                <button type="button" onclick="adicionarCurso()">Adicionar Curso</button>
+                <div id="cursosList"></div>
+
+                <button type="button" class="previous" onclick="voltarEtapa(2)">Voltar</button>
+                <button type="button" class="next" onclick="avancarEtapa(4)">Próximo</button>
+            </div>
+
+            <!-- Etapa 4 - Experiência Profissional -->
+            <div class="etapa" id="etapa-4">
+                <h2>Experiência Profissional</h2>
+                <label for="cargo">Cargo:</label>
+                <input type="text" id="cargo" name="cargo">
+                
+                <label for="empresa">Empresa:</label>
+                <input type="text" id="empresa" name="empresa">
+
+                <label for="periodo">Período:</label>
+                <input type="text" id="periodo" name="periodo">
+
+                <button type="button" onclick="adicionarExperiencia()">Adicionar Experiência</button>
+                <div id="experienciasList"></div>
+
+                <button type="button" class="previous" onclick="voltarEtapa(3)">Voltar</button>
+                <button type="button" class="next" onclick="avancarEtapa(5)">Próximo</button>
+            </div>
+
+            <!-- Etapa 5 - Objetivo e Profissão -->
+            <div class="etapa" id="etapa-5">
+                <h2>Objetivo e Profissão</h2>
+                <label for="objetivo">Objetivo Profissional:</label>
+                <textarea id="objetivo" name="objetivo" rows="4" required></textarea>
+
+                <label for="profissao">Profissão Desejada:</label>
+                <input type="text" id="profissao" name="profissao" required>
+                
+                <button type="button" class="previous" onclick="voltarEtapa(4)">Voltar</button>
+                <button type="submit">Enviar Currículo</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

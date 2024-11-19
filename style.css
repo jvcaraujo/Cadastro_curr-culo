@@ -1,0 +1,163 @@
+/* Resetando estilos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2C3E50; /* Cor de fundo mais escura */
+    color: #ecf0f1;  /* Texto claro */
+    padding: 40px 15px;
+    height: 100vh; /* Garantir que o body ocupe 100% da altura da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container principal */
+.container {
+    max-width: 900px;
+    width: 100%;
+    background-color: #34495E; /* Escuro, mas com um tom mais suave para contrastar */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Para evitar overflow do conteúdo */
+}
+
+/* Cabeçalho */
+h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #ECF0F1; /* Cor clara para o título */
+}
+
+h2 {
+    font-size: 22px;
+    color: #1ABC9C;  /* Verde suave para os subtítulos */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Estilo geral do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Organizando as etapas com flexbox */
+.etapa {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.etapa.ativa {
+    display: block;
+    opacity: 1;
+}
+
+/* Estilo dos campos de entrada */
+input, textarea {
+    padding: 12px;
+    border: 1px solid #BDC3C7;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #95A5A6;  /* Cor de fundo dos campos */
+    color: #2C3E50;
+    width: 100%;
+}
+
+/* Estilo de foco para os campos */
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #1ABC9C;
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.3);
+}
+
+/* Ajuste no campo textarea */
+textarea {
+    resize: vertical;
+}
+
+/* Colunas lado a lado para etapas com muitos campos */
+.input-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Colocar dois inputs lado a lado */
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* Ajuste nos inputs dentro do grupo */
+.input-group input,
+.input-group textarea {
+    width: 100%;
+}
+
+/* Botões */
+button {
+    background-color: #1ABC9C;  /* Cor do botão em verde */
+    color: white;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    width: auto;
+}
+
+/* Estilo do botão ao passar o mouse */
+button:hover {
+    background-color: #16A085;  /* Cor mais escura no hover */
+}
+
+/* Desabilitar botão */
+button:disabled {
+    background-color: #BDC3C7;
+    cursor: not-allowed;
+}
+
+/* Layout responsivo */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    /* Modificar o grid para 1 coluna em dispositivos pequenos */
+    .input-group {
+        grid-template-columns: 1fr; /* Colocar campos em uma coluna em telas pequenas */
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input, textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}
